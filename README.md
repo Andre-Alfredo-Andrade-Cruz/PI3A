@@ -1,6 +1,6 @@
 # PI3A
 
-#Alunos
+Alunos
  
 - André Alfredo Andrade Cruz -
 - Leonardo Nunes - 
