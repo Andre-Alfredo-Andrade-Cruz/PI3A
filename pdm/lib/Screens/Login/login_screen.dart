@@ -16,7 +16,7 @@ class LoginScreen extends StatelessWidget {
             appBar: null,
             body: Container(
               padding: EdgeInsets.only(left: 40, right: 40),
-              child:  Column(children: <Widget>[
+              child: ListView(children: <Widget>[
                 Padding(padding: EdgeInsets.only(bottom: 40)),
                 Row(
                   children: [
@@ -32,7 +32,10 @@ class LoginScreen extends StatelessWidget {
                 Padding(padding: EdgeInsets.only(bottom: 10)),
                 Row(
                   children: [
-                    Text("Usuario:"),
+                    Text(
+                      "Usuario:",
+                      style: TextStyle(color: Color.fromARGB(255, 255, 26, 1)),
+                    ),
                   ],
                 ),
                 Padding(padding: EdgeInsets.only(bottom: 10)),
@@ -41,8 +44,11 @@ class LoginScreen extends StatelessWidget {
                     Flexible(
                       child: TextField(
                           decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: 'Digite seu email',
+                        border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromARGB(255, 246, 0, 4),
+                                width: 2.0)),
+                        // hintText: 'Digite seu email',
                       )),
                     ),
                   ],
@@ -51,7 +57,10 @@ class LoginScreen extends StatelessWidget {
                 Padding(padding: EdgeInsets.only(bottom: 10)),
                 Row(
                   children: [
-                    Text("Senha:"),
+                    Text(
+                      "Senha:",
+                      style: TextStyle(color: Color.fromARGB(255, 255, 26, 1)),
+                    ),
                   ],
                 ),
                 Padding(padding: EdgeInsets.only(bottom: 10)),
@@ -61,7 +70,7 @@ class LoginScreen extends StatelessWidget {
                       child: TextField(
                           decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        hintText: 'Digite sua senha',
+                        // hintText: 'Digite sua senha',
                       )),
                     ),
                   ],
@@ -73,9 +82,17 @@ class LoginScreen extends StatelessWidget {
                     Flexible(
                       child: SizedBox(
                           child: ElevatedButton(
-                            child: Text("Entrar"),
-                            onPressed: () => {},
-                          ),
+                              child: Text("Entrar",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 255, 3, 3))),
+                              onPressed: () => {print("pressed")},
+                              style: ElevatedButton.styleFrom(
+                                side: BorderSide(
+                                  width: 2.0,
+                                  color: Color.fromARGB(255, 0, 0, 0),
+                                ),
+                                primary: Color.fromARGB(255, 255, 255, 255),
+                              )),
                           width: double.infinity,
                           height: 40),
                     )
@@ -87,7 +104,11 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     SizedBox(
                         child: TextButton(
-                          child: Text("Esqueceu a senha?"),
+                          child: Text(
+                            "Esqueceu a senha?",
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 255, 220, 23)),
+                          ),
                           onPressed: () => {},
                         ),
                         width: 200,
@@ -100,7 +121,11 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     SizedBox(
                         child: TextButton(
-                          child: Text("Faça o seu cadastro aqui."),
+                          child: Text(
+                            "Faça o seu cadastro aqui.",
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 255, 220, 23)),
+                          ),
                           onPressed: () => {},
                         ),
                         width: 200,
