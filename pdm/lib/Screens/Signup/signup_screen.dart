@@ -43,14 +43,14 @@ class SignupScreen extends StatelessWidget {
                   children: [
                     Flexible(
                         child: Container(
-                      height: 40,
+                      // height: 40,
                       child: TextField(
                         textAlignVertical: TextAlignVertical.center,
-                        style: TextStyle(fontSize: 20),
+                        // style: TextStyle(fontSize: 20),
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                           // hintText: 'Digite seu nome',
-                          isCollapsed: true,
+                          // isCollapsed: true,
                         ),
                       ),
                     )),
@@ -78,7 +78,7 @@ class SignupScreen extends StatelessWidget {
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             // hintText: 'Digite seu nome',
-                            isCollapsed: true,
+                            // isCollapsed: true,
                           )),
                     )),
                   ],
@@ -105,7 +105,7 @@ class SignupScreen extends StatelessWidget {
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             // hintText: 'Digite seu nome',
-                            isCollapsed: true,
+                            // isCollapsed: true,
                           )),
                     )),
                   ],
@@ -132,7 +132,7 @@ class SignupScreen extends StatelessWidget {
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             // hintText: 'Digite seu nome',
-                            isCollapsed: true,
+                            // isCollapsed: true,
                           )),
                     )),
                   ],
@@ -159,7 +159,7 @@ class SignupScreen extends StatelessWidget {
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             // hintText: 'Digite seu nome',
-                            isCollapsed: true,
+                            // isCollapsed: true,
                           )),
                     )),
                   ],

@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:pdm/Screens/ForgotPassword/forgot_screen.dart';
+import 'package:pdm/Screens/Signup/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -85,7 +87,8 @@ class LoginScreen extends StatelessWidget {
                               child: Text("Entrar",
                                   style: TextStyle(
                                       color: Color.fromARGB(255, 255, 3, 3))),
-                              onPressed: () => {print("pressed")},
+                              onPressed: () => {
+                              },
                               style: ElevatedButton.styleFrom(
                                 side: BorderSide(
                                   width: 2.0,
@@ -109,7 +112,11 @@ class LoginScreen extends StatelessWidget {
                             style: TextStyle(
                                 color: Color.fromARGB(255, 255, 220, 23)),
                           ),
-                          onPressed: () => {},
+                          onPressed: () => {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => ForgotScreen())
+                            )
+                          },
                         ),
                         width: 200,
                         height: 30),
@@ -126,7 +133,11 @@ class LoginScreen extends StatelessWidget {
                             style: TextStyle(
                                 color: Color.fromARGB(255, 255, 220, 23)),
                           ),
-                          onPressed: () => {},
+                          onPressed: () => {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) => SignupScreen())
+                            )
+                          },
                         ),
                         width: 200,
                         height: 30),
