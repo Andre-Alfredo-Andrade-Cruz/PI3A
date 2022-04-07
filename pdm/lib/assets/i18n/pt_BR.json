@@ -1,0 +1,13 @@
+{
+    "app_name" : "Aplicativo de Exemplo",
+    
+    "username" : "Usuário",
+    "username_hint" : "Informe o nome do seu usuário",
+    "password" : "Senha",
+    "password_hint" : "Informe a sua senha",
+    "login" : "Entrar",
+    "forgot_password" : "Esqueci a senha!",
+    "username_required" : "O usuário é obrigatório",
+    "password_required" : "A senha é obrigatória",
+    "signup" : "Faça o seu cadastro aqui."
+}
