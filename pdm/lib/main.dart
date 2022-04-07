@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pdm/Screens/Welcome/welcome_screen.dart';
+
+import 'Screens/ForgotPassword/forgot_screen.dart';
+import 'Screens/Login/login_screen.dart';
+import 'Screens/Signup/signup_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +17,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Pingu Idiomas',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: WelcomeScreen());
+        home: LoginScreen());
   }
 }
