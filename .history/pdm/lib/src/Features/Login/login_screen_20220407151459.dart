@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:pdm/src/Features/ForgotPassword/forgot_screen.dart';
-import 'package:pdm/src/Features/Signup/signup_screen.dart';
+import 'package:pdm/Screens/ForgotPassword/forgot_screen.dart';
+import 'package:pdm/Screens/Signup/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -23,7 +23,7 @@ class LoginScreen extends StatelessWidget {
                 Row(
                   children: [
                     Image.asset(
-                      'lib/assets/images/logo.png',
+                      'assets/images/logo.png',
                       width: 320,
                       height: 200,
                       fit: BoxFit.fill,

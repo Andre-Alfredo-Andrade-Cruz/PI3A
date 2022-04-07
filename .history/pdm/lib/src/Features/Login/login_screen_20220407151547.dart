@@ -23,7 +23,7 @@ class LoginScreen extends StatelessWidget {
                 Row(
                   children: [
                     Image.asset(
-                      'lib/assets/images/logo.png',
+                      'assets/images/logo.png',
                       width: 320,
                       height: 200,
                       fit: BoxFit.fill,

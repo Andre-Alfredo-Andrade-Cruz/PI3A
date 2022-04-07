@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pdm/src/Features/Welcome/welcome_screen.dart';
+import 'package:pdm/Screens/Welcome/welcome_screen.dart';
 
-import 'Features/ForgotPassword/forgot_screen.dart';
-import 'Features/Login/login_screen.dart';
-import 'Features/Signup/signup_screen.dart';
+import 'Screens/ForgotPassword/forgot_screen.dart';
+import 'Screens/Login/login_screen.dart';
+import 'Screens/Signup/signup_screen.dart';
 
 void main() {
   runApp(const MyApp());
