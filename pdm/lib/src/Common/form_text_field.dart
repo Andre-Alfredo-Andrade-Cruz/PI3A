@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:pdm/Screens/ForgotPassword/forgot_screen.dart';
-import 'package:pdm/Screens/Signup/signup_screen.dart';
+import 'package:pdm/src/Features/auth/presentation/view/page/forgot_screen.dart';
+import 'package:pdm/src/Features/auth/presentation/view/page/signup_screen.dart';
 
 extension CoreFormTextField on Widget {
   Widget createFormField({

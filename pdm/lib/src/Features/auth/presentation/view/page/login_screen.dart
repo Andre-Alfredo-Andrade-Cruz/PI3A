@@ -1,8 +1,8 @@
 import 'dart:indexed_db';
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+
 import './forgot_screen.dart';
 import './signup_screen.dart';
 import './../../viewmodel/login_screen_viewmodel.dart';
@@ -20,9 +20,9 @@ class _LoginScreenState extends ModularState<LoginScreen, LoginScreenViewModular
 
   Widget get _loginIndicator => Visibility(
     child: const LinearProgressIndicator(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.white,
     ),
-    vidible: store.isLoading,
+    visible: store.isLoading,
   );
 
   Widget get _username => widget.createFormField(
@@ -48,8 +48,8 @@ class _LoginScreenState extends ModularState<LoginScreen, LoginScreenViewModular
   );
 
   Widget get _loginButton => Container(
-    widdth: double.infinity,
-    heitght: 40,
+    width: double.infinity,
+    height: 40,
     child: ElevatedButton(
       style: ElevatedButton.styleFrom(
         side: BorderSide(
@@ -136,6 +136,5 @@ Widget buil(BuildContext context){
         },
       ),
     ),
-
   );
 }
