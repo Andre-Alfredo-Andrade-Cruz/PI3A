@@ -1,67 +1,18 @@
-import 'dart:indexed_db';
+// import 'dart:indexed_db';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import './login_screen.dart';
 import './signup_screen.dart';
-import './../../viewmodel/forgot_screen_viewmodel.dart';
+// import './../../viewmodel/forgot_screen_viewmodel.dart';
 
 class ForgotScreen extends StatelessWidget{
   const ForgotScreen({Key? key}) : super(key: key);
 
-  @override 
-  State<ForgotScreen> createState() => _ForgotScreenState();
-}
+  // @override 
+  // State<ForgotScreen> createState() => _ForgotScreenState();
 
-class _ForgotScreenState extends ModularState<ForgotScreen,ForgotScreenViewModular>{
-  late ColorScheme _colors;
-  late ThemeData _theme;
-
-  Widget get _forgotIndicator => Visibility(
-    child: const LinearProfressIndicator(
-      backgroundColor: Colors.white,
-    ),
-    visible: store.isLoading,
-  );
-
-  Widget get _name => widget.createFormField(
-    title: 'name'.i18n(),
-    theme: _theme,
-    keyboardType: TextInputType.text,
-    textInputAction: TextInputAction.next,
-    hint: 'name_hint'.i18n(),
-    enabled: !store.isLoading,
-    errorText: store.error.name,
-    onChange: (value) => store.name = value,
-  );
-
-  Widget get _username => widget.createFormField(
-    title: 'username'.i18n(),
-    theme: _theme,
-    keyboardType: TextInputType.emailAddress,
-    textInputAction: TextInputAction.next,
-    hint: 'username_hint'.i18n(),
-    enabled: !store.isLoading,
-    errorText: store.error.username,
-    onChange: (value) => store.username = value,
-  );
-
-  Widget get _confirmButton => Container(
-    width: double.infinity,
-    height: 40,
-    child: ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        primary: Color.fromARGB(255, 0, 0, 0),
-      ),
-      onPressed: store.isLoading ? null : store.login,
-      child: Text('confirm'.i18n()),
-    ),
-  );
-}
-
-/*
-class ForgotScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -79,7 +30,7 @@ class ForgotScreen extends StatelessWidget {
                 Row(
                   children: [
                     Image.asset(
-                      'assets/images/logo.png',
+                      'lib/assets/images/logo.png',
                       width: 320,
                       height: 200,
                       fit: BoxFit.fill,
@@ -158,4 +109,50 @@ class ForgotScreen extends StatelessWidget {
               height: double.infinity,
             )));
   }
-}*/
+}
+
+// class _ForgotScreenState extends ModularState<ForgotScreen,ForgotScreenViewModular>{
+//   late ColorScheme _colors;
+//   late ThemeData _theme;
+
+//   Widget get _forgotIndicator => Visibility(
+//     child: const LinearProfressIndicator(
+//       backgroundColor: Colors.white,
+//     ),
+//     visible: store.isLoading,
+//   );
+
+//   Widget get _name => widget.createFormField(
+//     title: 'name'.i18n(),
+//     theme: _theme,
+//     keyboardType: TextInputType.text,
+//     textInputAction: TextInputAction.next,
+//     hint: 'name_hint'.i18n(),
+//     enabled: !store.isLoading,
+//     errorText: store.error.name,
+//     onChange: (value) => store.name = value,
+//   );
+
+//   Widget get _username => widget.createFormField(
+//     title: 'username'.i18n(),
+//     theme: _theme,
+//     keyboardType: TextInputType.emailAddress,
+//     textInputAction: TextInputAction.next,
+//     hint: 'username_hint'.i18n(),
+//     enabled: !store.isLoading,
+//     errorText: store.error.username,
+//     onChange: (value) => store.username = value,
+//   );
+
+//   Widget get _confirmButton => Container(
+//     width: double.infinity,
+//     height: 40,
+//     child: ElevatedButton(
+//       style: ElevatedButton.styleFrom(
+//         primary: Color.fromARGB(255, 0, 0, 0),
+//       ),
+//       onPressed: store.isLoading ? null : store.login,
+//       child: Text('confirm'.i18n()),
+//     ),
+//   );
+// }
