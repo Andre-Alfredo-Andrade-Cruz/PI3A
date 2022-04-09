@@ -10,8 +10,6 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  ui:
-    sdk: dart
 
   cupertino_icons: ^1.0.2
   flutter_modular: ^4.4.0
