@@ -10,8 +10,8 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  ui:
-    sdk: dart
+  # ui:
+  #   sdk: dart
 
   cupertino_icons: ^1.0.2
   flutter_modular: ^4.4.0
@@ -41,8 +41,8 @@ flutter:
   fonts:
     - family: Roboto
       fonts:
-        - assets: lib/assets/fonts/Roboto-Regular.ttf
-        - assets: lib/assets/fonts/Roboto-Bold.ttf
+        - asset: lib/assets/fonts/Roboto-Regular.ttf
+        - asset: lib/assets/fonts/Roboto-Bold.ttf
           weight: 700
-        - assets: lib/assets/fonts/Roboto-Italic.ttf
+        - asset: lib/assets/fonts/Roboto-Italic.ttf
           style: italic 

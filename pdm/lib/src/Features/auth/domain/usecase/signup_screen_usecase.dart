@@ -46,6 +46,6 @@ class SignupUseCase {
   }
 
   Future<User> signup(String username, String name, String birth, String password, String confirm_password) {
-    return repository.forgot(User(username, name, birth, password, confirm_password));
+    return repository.signup(User(username, name, birth, password, confirm_password));
   }
 }
