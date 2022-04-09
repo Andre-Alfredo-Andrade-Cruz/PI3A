@@ -38,8 +38,8 @@ flutter:
   fonts:
     - family: Roboto
       fonts:
-        - assets: lib/assets/fonts/Roboto-Regular.ttf
-        - assets: lib/assets/fonts/Roboto-Bold.ttf
+        - asset: lib/assets/fonts/Roboto-Regular.ttf
+        - asset: lib/assets/fonts/Roboto-Bold.ttf
           weight: 700
-        - assets: lib/assets/fonts/Roboto-Italic.ttf
+        - asset: lib/assets/fonts/Roboto-Italic.ttf
           style: italic 
