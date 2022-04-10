@@ -19,5 +19,12 @@
     "confirm_password_hint": "Enter the password again",
     "register": "Register",
     "birth_required": "Birth date is required!",
-    "confirm_password_required": "Confirm password is required!"
+    "confirm_password_required": "Confirm password is required!",
+    "onboard_title1": "Study wherever you are",
+    "onboard_body1": "You can study wherever and whenever you want, with our readily and easily accessible content.",
+    "onboard_title2": "Learn online",
+    "onboard_body2": "Your selected language online to learn, for unlimited period, helping you understand in the most comfortable way.",
+    "onboard_title3": "Learning can also be fun",
+    "onboard_body3": "Control you own rhythm while studying, whenever you want, with no boring classes, so you can go even further beyond!",
+    "onboars_button": "Start"
 }
