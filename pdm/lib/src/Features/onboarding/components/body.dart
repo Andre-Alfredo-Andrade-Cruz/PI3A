@@ -15,21 +15,21 @@ class _BodyState extends State<Body> {
   int currentPage = 0;
   List<Map<String, String>> splashData = [
     {
-      "text": "Estude de onde quiser",
+      "text": "Aprenda de onde quiser",
       "text2":
-          "Estude quando e onde quiser, tendo acesso sempre que necessário por meio do conteúdo disponível.",
+          "Aprenda gírias e palavras específicas de cada região do Brasil quando e onde quiser, tendo acesso sempre que necessário por meio do chat.",
       "image": "lib/assets/images/onboard1.png"
     },
     {
-      "text": "Material online",
+      "text": "Chatbot",
       "text2":
-          "O material online do idioma selecionado, por tempo indeterminado, ajuda na compreensão do idioma de forma confortavél para o usuário.",
+          "O chatbot realiza a tradução das palavras informadas a partir de redes sociais, ajuda na compreensão de forma confortavél para o usuário.",
       "image": "lib/assets/images/onboard2.png"
     },
     {
-      "text": "Aprenda idiomas de forma divertida",
+      "text": "Aprenda variedades linguísticas de forma divertida",
       "text2":
-          "O aluno tendo total domínio sobre o seu aprendizado, estudando quando quiser, sem aulas monotonas e\n cansativas, acaba incentivando o aluno a se dedicar cada\n vez mais.",
+          "Aprendendo a variação da língua portuguesa e tendo total entendimento, acaba incentivando o aluno a usar o aplicativa cada vez mais.",
       "image": "lib/assets/images/onboard3.png"
     }
   ];
