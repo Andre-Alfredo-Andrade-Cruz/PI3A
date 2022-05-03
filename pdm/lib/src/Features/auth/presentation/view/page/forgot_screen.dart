@@ -31,7 +31,7 @@ class ForgotScreen extends StatelessWidget{
                   children: [
                     Image.asset(
                       'lib/assets/images/logo.png',
-                      width: 320,
+                      width: 300,
                       height: 200,
                       fit: BoxFit.fill,
                     ),
