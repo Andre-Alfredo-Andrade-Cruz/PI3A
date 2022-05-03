@@ -1,8 +1,7 @@
-import 'package:basearch/src/features/auth/data/dto/user_dto.dart';
 import 'package:dio/dio.dart';
-
 import '../../domain/model/forgot.dart';
 import '../../domain/repository/forgot_screen_interface.dart';
+import '../dto/forgot_dto.dart';
 
 class ForgotScreenRepository implements IForgot {
   @override

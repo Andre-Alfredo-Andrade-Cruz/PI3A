@@ -1,4 +1,4 @@
-import 'package:basearch/src/features/auth/domain/model/user.dart';
+import 'package:pdm/src/Features/auth/domain/model/forgot.dart';
 
 class UserDto {
   const UserDto(this.name, this.username);
@@ -11,7 +11,7 @@ class UserDto {
   }
 
   factory UserDto.fromJson(Map<String, dynamic> json) =>
-      UserDto(json['name'],json['username']);
+      UserDto(json['name'], json['username']);
 
-  Map<String, dynamic> toJson() => {'name': name,'username': username};
+  Map<String, dynamic> toJson() => {'name': name, 'username': username};
 }

@@ -1,8 +1,7 @@
-import 'package:basearch/src/features/auth/data/dto/user_dto.dart';
 import 'package:dio/dio.dart';
-
 import '../../domain/model/signup.dart';
 import '../../domain/repository/signup_screen_interface.dart';
+import '../dto/signup_dto.dart';
 
 class SignupScreenRepository implements ISignup {
   @override
@@ -14,7 +13,9 @@ class SignupScreenRepository implements ISignup {
     );
     if (response.statusCode == 200) {
       final token = response.headers.value('Authorization');
-      final domain = User(user.name,user.birth, user.username, user.password, user.confirm_password, token: token);
+      final domain = User(user.name, user.username, user.birth, user.password,
+          user.confirmPassword,
+          token: token);
       return Future.value(domain);
     } else {
       throw Exception("Não foi possível cadastrar usuário!");
