@@ -33,3 +33,32 @@ app.get('/login', (req, resp) => {
 
     return
 })
+
+app.post('/login', (req, resp) => {
+
+
+
+    users.forEach(user => {
+        if(req.query.username == user.username && req.query.password == user.password){
+            if(req.query.password == user.password){
+                resp.status(200).send({
+                    login: true,
+                    message: "Usuario logado com sucesso."
+                })
+                resp.end()
+            }else{
+                resp.send({
+                    login: false,
+                    message: "A senha está incorreta."
+                })
+            }
+        }
+    })
+
+    resp.send({
+        login: false,
+        message: "A senha está incorreta."
+    })
+
+    return
+})

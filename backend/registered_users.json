@@ -1,16 +1,19 @@
 [
     {
-        "email": "andre@gmail.com",
+        "username": "andre",
         "password": "123456@A"
     },
     {
-        "email": "leonardo@gmail.com",
+        "username": "leonardo",
         "password": "123456@L"
     },{
-        "email": "mariana@gmail.com",
+        "username": "mariana",
         "password": "123456@M"
     },{
-        "email": "pedro@gmail.com",
+        "username": "pedro",
         "password": "123456@P"
+    },{
+        "username": "oi",
+        "password": "123"
     }
 ]

@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Pingu Idiomas',
-        home: SplashScreen()); // LoginScreen());
+        // home: SplashScreen()); //
+        home: LoginScreen());
   }
 }
