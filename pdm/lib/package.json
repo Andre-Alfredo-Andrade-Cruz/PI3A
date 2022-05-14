@@ -1,0 +1,39 @@
+{
+  "name": "server1",
+  "version": "1.0.0",
+  "description": "Dialogflow Server",
+  "main": "src/index.js",
+  "author": {
+    "name": "Kenniston Arraes Bonfim",
+    "url": "http://www.dynamic-light.com.br"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kenniston/dialogflow-server.git"
+  },
+  "license": "ISC",
+  "scripts": {
+    "test": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "local": "nodemon --inspect=9777 src/index.js"
+  },
+  "keywords": [
+    "dialogflow",
+    "server"
+  ],
+  "dependencies": {
+    "axios": "0.19.0",
+    "body-parser": "1.19.0",
+    "compression": "1.7.4",
+    "dialogflow": "^0.10.3",
+    "express": "4.16.4",
+    "lodash": "^4.17.15",
+    "multer": "^1.4.2",
+    "nodemon": "1.19.0",
+    "pb-util": "^0.1.1"
+  },
+  "engines": {
+    "node": "11.9.0",
+    "npm": "6.9.0"
+  }
+}
