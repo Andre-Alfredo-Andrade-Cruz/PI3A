@@ -10,13 +10,7 @@ import './signup_screen.dart';
 import 'package:pdm/src/google_maps.dart';
 // import './../../viewmodel/login_screen_viewmodel.dart';
 
-class Log
-  cupertino_icon: ^1.0.2
-  google_maps_flutter: ^2.1.3
-
-  cupertino_icon: ^1.0.2
-  google_maps_flutter: ^2.1.3
-inScreen extends StatelessWidget{
+class LoginScreen extends StatelessWidget{
   // const LoginScreen({Key? key}) : super(key: key);
 
   @override
@@ -240,5 +234,5 @@ inScreen extends StatelessWidget{
 
 // class _LoginScreenState extends ModularState<LoginScreen, LoginScreenViewModular>{
 
-// }
+
 

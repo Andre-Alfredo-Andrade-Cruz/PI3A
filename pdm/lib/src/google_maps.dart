@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context){
     return MaterialApp(
       title: 'Google Maps',
-      theme: ThemeData
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -43,8 +42,8 @@ class _MyHomePageState extends State<MyHomePage> {
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
     setState(() {
-      addMarker('Oceano Atlântico', _center);
-      addCirccle('oceacno-atlantico-circle',_center,100);
+      addMarker('', _center, 'oceano-atlantico', '');
+      addCircle('oceano-atlantico-circle',_center,100);
     });
   }
 
@@ -66,8 +65,8 @@ class _MyHomePageState extends State<MyHomePage> {
       center: point,
       radius: radius,
       fillColor: Colors.blueGrey,
-      stronkeWidth: 3,
-      stronkeColor: Colors.blueAccent
+      strokeWidth: 3,
+      strokeColor: Colors.blueAccent
     );
     _circles.add(circle);
   }
