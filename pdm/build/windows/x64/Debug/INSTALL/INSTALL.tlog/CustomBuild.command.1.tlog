@@ -1,0 +1,10 @@
+^C:\USERS\ANDRE\DOCUMENTS\GITHUB\PI3A\PDM\BUILD\WINDOWS\CMAKEFILES\3AC2BF3CC8A43040EB3D3A877544B137\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
