@@ -22,6 +22,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Pingu Idiomas',
         // home: SplashScreen()); //
-        home: /*LoginScreen()*/HomePage());
+        home: LoginScreen());
   }
 }
