@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pdm/src/Features/auth/presentation/view/page/home_page.dart';
 import 'package:pdm/src/Features/onboarding/presentation/view/page/splash_screen.dart';
 // import 'package:pdm/Screens/Welcome/welcome_screen.dart';
 
@@ -21,6 +22,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Pingu Idiomas',
         // home: SplashScreen()); //
-        home: LoginScreen());
+        home: /*LoginScreen()*/HomePage());
   }
 }
