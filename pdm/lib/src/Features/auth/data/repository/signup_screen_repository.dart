@@ -8,12 +8,12 @@ class SignupScreenRepository implements ISignup {
   Future<User> signup(User user) async {
     final dto = UserDto.fromDomain(user);
     final response = await Dio().post(
-      'http://flutter-api.mocklab.io/auth/login',
-      data: dto.toJson(),
+      'http://10.0.2.2:3000/signup',
+      queryParameters: dto.toJson(),
     );
     if (response.statusCode == 200) {
       final token = response.headers.value('Authorization');
-      final domain = User(user.name, user.username, user.birth, user.password,
+      final domain = User(user.username, user.birth, user.email, user.password,
           user.confirmPassword,
           token: token);
       return Future.value(domain);
