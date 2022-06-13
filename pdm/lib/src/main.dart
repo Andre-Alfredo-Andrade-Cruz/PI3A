@@ -1,3 +1,5 @@
+// @dart=2.9
+
 import 'package:flutter/material.dart';
 import 'package:pdm/src/Features/auth/presentation/view/page/home_page.dart';
 import 'package:pdm/src/Features/onboarding/presentation/view/page/splash_screen.dart';
@@ -14,7 +16,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

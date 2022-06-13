@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "pingu-slang-vbwj",
+  "private_key_id": "cb1899c41b4889ad83a50757280cc451295f6878",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCkAf66dIaZsQai\nsK9MfGXtr55aBJUEnN4js+wweI5PzWVHrY+C5GYHRU4f7iVIjr6wLl1Z8aOAwKEX\nHU2DazVpM+KjugSl/mXmOHlaRUAyZFaq70zKbUDolHusu4+y+om3LwULx/NvAuGS\nsnaIJzuXqQ0FFHxYPNmEhTLhHsGaSadjo05aJnoaLuo0zGHUH5cVBgT6XpuMyBmy\nYWtQYM4eAb0LsSV08hsB8MTVSqv1owNCMPRRVFZ+gsEeGPXW+QX7URNTcu6I7gGl\nAX47ld5pcSBhsBBCs77ln3lCRNQlyuhXGEGTCYqR9CgUX/lJ9jKbAH51IYXlhFN+\nJcMRmYc1AgMBAAECggEALsag44Xjc8chCNqSjKJ4IbOyWqMu6ytgUdd5eBOSJyGC\nDtDp+t9wWAeEsiemO4z2xuHaXxJDWy/VYfXKCz7S82fIboDZ3YvyfRhDSCMzHYwv\nib4JbTx+xDbBFTFDWT0KdRP0gPksrU8pjcDXfJqP7P/ahkXi9vmX4itpKPqwJfQB\nzxFoCzYBUBsuirMNDzNjSxnaEKui6hsnSAuLVPtNs9lItjChXAl9JUL6Fjh6H3bD\nlfU6ktc9qYW0JEJ0zl0dxeK1js6ptcPphBd9EbfJzxq+aEiK98hDym6w6iulo5GV\nWLPVjKoCNlip6sp4FoGD1CSPgNRC4swijtn6Wsnn6wKBgQDVWfbmpcwPDw2yg2N0\nyzVHDXp6dcXyD7KPiyZ3tsP+DctbX+eUGZiaTooF7WqNKj3yYgYkXt1EgL37PsIy\nVGDxFwMpGjNPBbbP6Nm5YUTA2iMiX77HMSgH6EUfi/UUFPUraGB1WRYDDkZyw6Cw\nYz71mFkmbwKNkJ2hfpg2k23DkwKBgQDEyuwHVJ31v7SiFC2CQ4H9YXbwny86hQ+o\no1GrDTgcItNYLhZJHxpK+zxL/joAu4JHaQxaEGvDnmlgeV7Q68mqlTr5W4iaMxCG\nxFa0Arqi7TtGwP1XY+IhDl7byRvIfGMW5CRiMQOI7xPz33DzqEKjnn7x/yAhmptj\ntHM3HWJXFwKBgDtzZD+FN8WCdlimEBK9hU0VTmnNY6k+Ao3JQqDdRuQGSAJgSRGV\nyFZHSGK6c5R+juB5vChqXtH15fqa1FZd+N11giXz7RQ6DWUGB5WGqzfqERxE/c5X\nvkXlzU0rHNHJvT+pSCeq+V1EnxDfvmkoXqTlHQJ+sIFuKN6VfijHEDENAoGAOW2S\nRW1fD1kbaHUE9s+mfn/TytJZYPV1pVvLuGQKLMPI8yG35SzLang4l2CgIpiVoys3\nrIzANfzjeYDRt5wnZL1Z0WzxxzYBq6JePvfQ6TzboIEvLTJ7yfO8oNzmW7JY5FQ9\nfd4Zzvsd0nwxJRnEIKVfHFW8VbIdiJIfUUUk7o8CgYEA1NmeS+Mpxhxaxt68JdWM\nJjmyqFr0U036EyEdZmvZCGiRCf/7xgr+gBKepkr24rpywDkB67L71GUuY5rL1ACy\nsAkn6yi9s+E1ZsrbWvy7djmeka978HvlVWdqFge8Z/2WOoRKdV3fjawf2No9BspL\n7qe5uTqA6Qhk+zSQYKgfc/g=\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflow123@pingu-slang-vbwj.iam.gserviceaccount.com",
+  "client_id": "116498938598831783289",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow123%40pingu-slang-vbwj.iam.gserviceaccount.com"
+}
