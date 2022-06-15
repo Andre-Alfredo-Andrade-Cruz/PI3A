@@ -1,14 +1,15 @@
 // import 'dart:indexed_db';
-import 'dart:ui';
+//import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:pdm/src/Features/auth/domain/repository/signup_screen_interface.dart';
+//import 'package:flutter/rendering.dart';
+import 'package:localization/localization.dart';
+//import 'package:pdm/src/Features/auth/domain/repository/signup_screen_interface.dart';
 import 'package:pdm/src/Features/auth/domain/usecase/signup_screen_usecase.dart';
 
-import '../../../data/repository/signup_screen_repository.dart';
-import '../../../domain/model/signup.dart';
+//import '../../../data/repository/signup_screen_repository.dart';
+//import '../../../domain/model/signup.dart';
 import 'login_page.dart';
-import 'forgot_page.dart';
+//import 'forgot_page.dart';
 // import './../../viewmodel/signup_screen_viewmodel.dart';
 
 // class SignupScreen extends StatelessWidget{
@@ -18,95 +19,28 @@ import 'forgot_page.dart';
 //   State<SignupScreen> createState() => _SignupScreenState();
 // }
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
+
+  const SignupScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
 // class _SignupScreenState extends ModularState<SignupScreen,SignupScreenViewModular>{
-  late ColorScheme _colors;
-  late ThemeData _theme;
-
-  // Widget get _signupIndicator => Visibility(
-  //   child: const LinearProfressIndicator(
-  //     backgroundColor: Colors.white,
-  //   ),
-  //   visible: store.isLoading,
-  // );
-
-  // Widget get _name => widget.createFormField(
-  //   title: 'name'.i18n(),
-  //   theme: _theme,
-  //   keyboardType: TextInputType.text,
-  //   textInputAction: TextInputAction.next,
-  //   hint: 'name_hint'.i18n(),
-  //   enabled: !store.isLoading,
-  //   errorText: store.error.name,
-  //   onChange: (value) => store.name = value,
-  // );
-
-  // Widget get _birth => widget.createFormField(
-  //   title: 'birth'.i18n(),
-  //   theme: _theme,
-  //   keyboardType: TextInputType.date,
-  //   textInputAction: TextInputAction.next,
-  //   hint: 'birth_hint'.i18n(),
-  //   enabled: !store.isLoading,
-  //   errorText: store.error.birth,
-  //   onChange: (value) => store.birth = value,
-  // );
-
-  // Widget get _username => widget.createFormField(
-  //   title: 'username'.i18n(),
-  //   theme: _theme,
-  //   keyboardType: TextInputType.emailAddress,
-  //   textInputAction: TextInputAction.next,
-  //   hint: 'username_hint'.i18n(),
-  //   enabled: !store.isLoading,
-  //   errorText: store.error.username,
-  //   onChange: (value) => store.username = value,
-  // );
-
-  // Widget get _password => widget.createFormField(
-  //   title: 'password'.i18n(),
-  //   theme: _theme,
-  //   keyboardType: TextInputType.text,
-  //   obscureText: true,
-  //   hint: 'password_hint'.i18n(),
-  //   enabled: !store.isLoading,
-  //   errorText: store.error.password,
-  //   onChange: (value) => store.password = value,
-  // );
-
-  //  Widget get _confirm_password => widget.createFormField(
-  //   title: 'confirm_password'.i18n(),
-  //   theme: _theme,
-  //   keyboardType: TextInputType.text,
-  //   obscureText: true,
-  //   hint: 'confirm_password_hint'.i18n(),
-  //   enabled: !store.isLoading,
-  //   errorText: store.error.confirm_password,
-  //   onChange: (value) => store.confirm_password = value,
-  // );
-
-  //  Widget get _registerButton => Container(
-  //   width: double.infinity,
-  //   height: 40,
-  //   child: ElevatedButton(
-  //     style: ElevatedButton.styleFrom(
-  //       side: BorderSide(
-  //         width: 2.0,
-  //         color: Color.fromARGB(255, 0, 0, 0),
-  //       ),
-  //       primary: Color.fromARGB(255, 255, 255, 255),
-  //     ),
-  //     onPressed: store.isLoading ? null : store.register,
-  //     child: Text('register'.i18n()),
-  //   ),
-  // );
-
   var usernameTextFieldController = TextEditingController();
+
   var nameTextFieldController = TextEditingController();
+
   var birthTextFieldController = TextEditingController();
+
   var emailTextFieldController = TextEditingController();
+
   var passwordTextFieldController = TextEditingController();
+
   var confirmPasswordTextFieldController = TextEditingController();
+
   // final signupRepository = SignupScreenRepository();
   var signupUseCase = SignupUseCase();
 
@@ -139,7 +73,7 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Usuario:",
+                      'User'.i18n(),
                       style: TextStyle(fontSize: 20, color: Colors.red),
                     ),
                   ],
@@ -148,19 +82,16 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Flexible(
-                        child: Container(
-                      // height: 40,
-                      child: TextField(
-                        controller: usernameTextFieldController,
-                        textAlignVertical: TextAlignVertical.center,
-                        // style: TextStyle(fontSize: 20),
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          // hintText: 'Digite seu nome',
-                          // isCollapsed: true,
-                        ),
-                      ),
-                    )),
+                        child: TextField(
+                          controller: usernameTextFieldController,
+                          textAlignVertical: TextAlignVertical.center,
+                          // style: TextStyle(fontSize: 20),
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            // hintText: 'Digite seu nome',
+                            // isCollapsed: true,
+                          ),
+                        )),
                   ],
                   mainAxisAlignment: MainAxisAlignment.center,
                 ),
@@ -168,7 +99,7 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Nome:",
+                      'Name'.i18n(),
                       style: TextStyle(fontSize: 20, color: Colors.red),
                     ),
                   ],
@@ -177,9 +108,7 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Flexible(
-                        child: Container(
-                      // height: 40,
-                      child: TextField(
+                        child: TextField(
                         controller: nameTextFieldController,
                         textAlignVertical: TextAlignVertical.center,
                         // style: TextStyle(fontSize: 20),
@@ -188,8 +117,7 @@ class SignupScreen extends StatelessWidget {
                           // hintText: 'Digite seu nome',
                           // isCollapsed: true,
                         ),
-                      ),
-                    )),
+                      )),
                   ],
                   mainAxisAlignment: MainAxisAlignment.center,
                 ),
@@ -197,7 +125,7 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Email:",
+                      "E-mail:",
                       style: TextStyle(fontSize: 20, color: Colors.red),
                     ),
                   ],
@@ -206,9 +134,9 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Flexible(
-                        child: Container(
-                      height: 40,
-                      child: TextField(
+                        child: SizedBox(
+                          height: 40,
+                          child: TextField(
                           controller: birthTextFieldController,
                           textAlignVertical: TextAlignVertical.center,
                           style: TextStyle(fontSize: 20),
@@ -225,7 +153,7 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Data de nascimento:",
+                      'birth'.i18n(),
                       style: TextStyle(fontSize: 20, color: Colors.red),
                     ),
                   ],
@@ -234,7 +162,7 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Flexible(
-                        child: Container(
+                        child: SizedBox(
                       height: 40,
                       child: TextField(
                           controller: emailTextFieldController,
@@ -253,7 +181,7 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Senha:",
+                      'password'.i18n(),
                       style: TextStyle(fontSize: 20, color: Colors.red),
                     ),
                   ],
@@ -262,9 +190,9 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Flexible(
-                        child: Container(
-                      height: 40,
-                      child: TextField(
+                        child: SizedBox(
+                          height: 40,
+                          child: TextField(
                           controller: passwordTextFieldController,
                           textAlignVertical: TextAlignVertical.center,
                           style: TextStyle(fontSize: 20),
@@ -281,7 +209,7 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Confirmar senha:",
+                      'confirm_password'.i18n(),
                       style: TextStyle(fontSize: 20, color: Colors.red),
                     ),
                   ],
@@ -290,9 +218,9 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Flexible(
-                        child: Container(
-                      height: 40,
-                      child: TextField(
+                        child: SizedBox(
+                          height: 40,
+                          child: TextField(
                           controller: confirmPasswordTextFieldController,
                           textAlignVertical: TextAlignVertical.center,
                           style: TextStyle(fontSize: 20),
@@ -311,7 +239,7 @@ class SignupScreen extends StatelessWidget {
                     Flexible(
                       child: SizedBox(
                           child: ElevatedButton(
-                              child: Text("Cadastrar",
+                              child: Text('register'.i18n(),
                                   style: TextStyle(
                                       color: Color.fromARGB(255, 255, 3, 3))),
                               onPressed: () => {
@@ -329,8 +257,7 @@ class SignupScreen extends StatelessWidget {
                                         context: context,
                                         builder: (BuildContext context) {
                                           return AlertDialog(
-                                            title: const Text(
-                                                'Usuário cadastrado com sucesso!'),
+                                            title: Text('register_True'.i18n()),
                                             content: SingleChildScrollView(
                                               child: ListBody(
                                                 children: <Widget>[
@@ -363,8 +290,7 @@ class SignupScreen extends StatelessWidget {
                                         context: context,
                                         builder: (BuildContext context) {
                                           return AlertDialog(
-                                            title: const Text(
-                                                'Erro ao fazer o cadastro'),
+                                            title: Text('register_False'.i18n()),
                                             content: SingleChildScrollView(
                                               child: ListBody(
                                                 children: <Widget>[

@@ -1,113 +1,42 @@
 // import 'dart:indexed_db';
-import 'dart:ui';
+//import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:pdm/src/Features/auth/data/repository/login_screen_repository.dart';
+import 'package:localization/localization.dart';
+//import 'package:flutter/rendering.dart';
+//import 'package:flutter_modular/flutter_modular.dart';
+//import 'package:pdm/src/Features/auth/data/repository/login_screen_repository.dart';
 import 'package:pdm/src/Features/auth/domain/usecase/login_screen_usecase.dart';
-import 'package:pdm/src/Features/auth/presentation/view/page/home_page.dart';
+//import 'package:pdm/src/Features/auth/presentation/view/page/home_page.dart';
 import 'package:pdm/src/Features/onboarding/presentation/view/page/splash_screen.dart';
 // import 'package:pdm/src/Features/auth/presentation/viewmodel/signup_screen_viewmodel.dart';
 
-import '../../../domain/model/user.dart';
+//import '../../../domain/model/user.dart';
 import 'forgot_page.dart';
 import 'signup_page.dart';
 // import './../../viewmodel/login_screen_viewmodel.dart';
 
-class LoginScreen extends StatelessWidget {
-  // const LoginScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  // State<LoginScreen> createState() => _LoginScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
+}
 
-  late ColorScheme _colors;
-  late ThemeData _theme;
+class _LoginScreenState extends State<LoginScreen> {
+  // const LoginScreen({Key? key}) : super(key: key);
 
   // Widget get _loginIndicator => Visibility(
-  //   child: const LinearProgressIndicator(
-  //     backgroundColor: Colors.white,
-  //   ),
-  //   visible: store.isLoading,
-  // );
-
-  // Widget get _username => widget.createFormField(
-  //   title: 'username'.i18n(),
-  //   theme: _theme,
-  //   keyboardType: TextInputType.emailAddress,
-  //   textInputAction: TextInputAction.next,
-  //   hint: 'username_hint'.i18n(),
-  //   enabled: !store.isLoading,
-  //   errorText: store.error.username,
-  //   onChange: (value) => store.username = value,
-  // );
-
-  // Widget get _password => widget.createFormField(
-  //   title: 'password'.i18n(),
-  //   theme: _theme,
-  //   keyboardType: TextInputType.text,
-  //   obscureText: true,
-  //   hint: 'password_hint'.i18n(),
-  //   enabled: !store.isLoading,
-  //   errorText: store.error.password,
-  //   onChange: (value) => store.password = value,
-  // );
-
-  // Widget get _loginButton => Container(
-  //   width: double.infinity,
-  //   height: 40,
-  //   child: ElevatedButton(
-  //     style: ElevatedButton.styleFrom(
-  //       side: BorderSide(
-  //         width: 2.0,
-  //         color: Color.fromARGB(255, 0, 0, 0),
-  //       ),
-  //       primary: Color.fromARGB(255, 255, 255, 255),
-  //     ),
-  //     onPressed: store.isLoading ? null : store.login,
-  //     child: Text('login'.i18n()),
-  //   ),
-  // );
-
-  // Widget get _forgotPasswordButton = ContainerText(
-  //   width: 200,
-  //   height: 30,
-  //   child: TextButton(
-  //     style: TextStyle(
-  //       color: Color.fromARGB(255, 255, 220, 23)),
-  //     ),
-  //     onPressed: store.isLoading ? null : () {
-  //       Navigator.of(context).push(
-  //         MaterialPageRoute(builder: (context) => ForgotScreen())
-  //       );
-  //     },
-  //     child: Text('forgot_password'.i18n()),
-  //   ),
-  // );
-
-  // Widget get _singUp => ContainerText(
-  //   width: 200,
-  //   height: 30,
-  //   child: TextButton(
-  //     style: TextStyle(
-  //       color: Color.fromARGB(255, 255, 220, 23),
-  //     ),
-  //     onPressed: () => {
-  //       Navigator.of(context).push(
-  //         MaterialPageRoute(builder: (context) => SignupScreen())
-  //       ),
-  //     },
-  //   ),
-  //   child: Text('signup'.i18n()),
-  // );
-
   final loginTextFieldController = TextEditingController();
+
   final passwordTextFieldController = TextEditingController();
+
   final loginUseCase = LoginUseCase();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text("Login")),
+        appBar: AppBar(title: Text('app_name'.i18n())),
         body: Container(
           padding: EdgeInsets.only(left: 40, right: 40),
           child: ListView(children: <Widget>[
@@ -127,7 +56,7 @@ class LoginScreen extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Usuario:",
+                  'username'.i18n(),
                   style: TextStyle(color: Color.fromARGB(255, 255, 26, 1)),
                 ),
               ],
@@ -153,7 +82,7 @@ class LoginScreen extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Senha:",
+                  'password'.i18n(),
                   style: TextStyle(color: Color.fromARGB(255, 255, 26, 1)),
                 ),
               ],
@@ -178,7 +107,7 @@ class LoginScreen extends StatelessWidget {
                 Flexible(
                   child: SizedBox(
                       child: ElevatedButton(
-                          child: Text("Entrar",
+                          child: Text('login'.i18n(),
                               style: TextStyle(
                                   color: Color.fromARGB(255, 255, 3, 3))),
                           onPressed: () => {
@@ -190,8 +119,7 @@ class LoginScreen extends StatelessWidget {
                                     context: context,
                                     builder: (BuildContext context) {
                                       return AlertDialog(
-                                        title: const Text(
-                                            'Usuário logado com sucesso!'),
+                                        title: Text('username_true'.i18n()),
                                         content: SingleChildScrollView(
                                           child: ListBody(
                                             children: <Widget>[
@@ -220,8 +148,7 @@ class LoginScreen extends StatelessWidget {
                                     context: context,
                                     builder: (BuildContext context) {
                                       return AlertDialog(
-                                        title:
-                                            const Text('Erro ao fazer o login'),
+                                        title: Text('username_false'.i18n()),
                                         content: SingleChildScrollView(
                                           child: ListBody(
                                             children: <Widget>[
@@ -261,7 +188,7 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(
                     child: TextButton(
                       child: Text(
-                        "Esqueceu a senha?",
+                        'forgot_password'.i18n(),
                         style:
                             TextStyle(color: Color.fromARGB(255, 255, 220, 23)),
                       ),
@@ -281,7 +208,7 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(
                     child: TextButton(
                       child: Text(
-                        "Faça o seu cadastro aqui.",
+                        'signup'.i18n(),
                         style:
                             TextStyle(color: Color.fromARGB(255, 255, 220, 23)),
                       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:localization/localization.dart';
 import 'package:pdm/src/google_maps.dart';
 import 'package:pdm/src/DialogFlow.dart';
 
@@ -19,7 +20,7 @@ class HomePage extends StatelessWidget {
                 Flexible(
                   child: SizedBox(
                       child: ElevatedButton(
-                          child: Text("Chat",
+                          child: Text("ChatBot",
                               style: TextStyle(
                                   color: Color.fromARGB(255, 255, 3, 3))),
                           onPressed: () => {
@@ -47,7 +48,7 @@ class HomePage extends StatelessWidget {
                 Flexible(
                   child: SizedBox(
                       child: ElevatedButton(
-                          child: Text("Mapa",
+                          child: Text('map'.i18n(),
                               style: TextStyle(
                                   color: Color.fromARGB(255, 255, 3, 3))),
                           onPressed: () => {
@@ -75,7 +76,7 @@ class HomePage extends StatelessWidget {
                 Flexible(
                   child: SizedBox(
                       child: ElevatedButton(
-                          child: Text("Transformador Slang",
+                          child: Text('Slang'.i18n(),
                               style: TextStyle(
                                   color: Color.fromARGB(255, 255, 3, 3))),
                           onPressed: () => {},
