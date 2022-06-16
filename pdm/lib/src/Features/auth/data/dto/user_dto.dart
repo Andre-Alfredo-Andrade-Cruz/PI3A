@@ -1,15 +1,10 @@
-// import 'package:basearch/src/features/auth/domain/model/user.dart';
-
 import '../../domain/model/user.dart';
-
-// import '../../domain/model/signup.dart';
 
 class UserDto {
   const UserDto(this.username, this.password);
 
   final String username;
   final String password;
-  // final String token;
 
   factory UserDto.fromDomain(User user) {
     return UserDto(user.username, user.password);

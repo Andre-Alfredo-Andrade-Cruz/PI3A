@@ -4,10 +4,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-/*void main(){
-  runApp(const MyApp());
-}*/
-
 class GoogleMAPS extends StatelessWidget{
   const GoogleMAPS({Key? key}) : super(key: key);
 

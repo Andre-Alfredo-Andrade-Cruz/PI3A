@@ -9,15 +9,14 @@ class ForgotScreenRepository implements IForgot {
     final dto = UserDto.fromDomain(user);
     final response = await Dio().post(
       'http://10.0.2.2:3000/forgot',
-      data: dto.toJson(),
+      queryParameters: dto.toJson(),
     );
     if (response.statusCode == 200) {
       final token = response.headers.value('Authorization');
-      final domain = User(user.name, user.username, token: token);
-      // final domain = User(user.name, user.username, token: token);
+      final domain = User(user.email, token: token);
       return Future.value(domain);
     } else {
-      throw Exception("Nome ou Usuário Inválidos!");
+      throw Exception(response.headers['Message']);
     }
   }
 }

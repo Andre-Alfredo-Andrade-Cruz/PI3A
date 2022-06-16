@@ -1,17 +1,16 @@
 import 'package:pdm/src/Features/auth/domain/model/forgot.dart';
 
 class UserDto {
-  const UserDto(this.name, this.username);
+  const UserDto(this.email);
 
-  final String name;
-  final String username;
+  final String email;
 
   factory UserDto.fromDomain(User user) {
-    return UserDto(user.name, user.username);
+    return UserDto(user.email);
   }
 
   factory UserDto.fromJson(Map<String, dynamic> json) =>
-      UserDto(json['name'], json['username']);
+      UserDto(json['email']);
 
-  Map<String, dynamic> toJson() => {'name': name, 'username': username};
+  Map<String, dynamic> toJson() => {'email': email};
 }

@@ -7,12 +7,10 @@ import '../model/signup.dart';
 import '../repository/signup_screen_interface.dart';
 
 class SignupUseCase {
-  // final repository = Modular.get<ISignup>();
   final repository = SignupScreenRepository();
 
   List validateName(String name) {
     if (name.isEmpty) {
-      // return 'name_required'.i18n();
       return [false, "O nome não pode estar em branco."];
     }
 
@@ -28,7 +26,6 @@ class SignupUseCase {
 
   List validateBirth(String birth) {
     if (birth.isEmpty) {
-      // return 'birth_required'.i18n();
       return [false, "A data de nascimento não pode estar em branco."];
     }
     return [true];
@@ -36,7 +33,6 @@ class SignupUseCase {
 
   List validateEmail(String email) {
     if (email.isEmpty) {
-      // return 'birth_required'.i18n();
       return [false, "O email não pode estar em branco."];
     }
 
@@ -116,8 +112,8 @@ class SignupUseCase {
     return [true];
   }
 
-  List validateAllFields(String username, String name, String birth,
-      String email, String password, String confirmPassword) {
+  List validateAllFields(String username, String name, String email,
+      String birth, String password, String confirmPassword) {
     if (!validateUsername(username)[0]) {
       return validateUsername(username);
     }
@@ -145,16 +141,16 @@ class SignupUseCase {
     return [true];
   }
 
-  Future<User> signup(String username, String name, String birth, String email,
+  Future<User> signup(String username, String name, String email, String birth,
       String password, String confirmPassword) {
     var respValidateAllFields = validateAllFields(
-        username, name, birth, email, password, confirmPassword);
+        username, name, email, birth, password, confirmPassword);
     if (!respValidateAllFields[0]) {
       final msg = respValidateAllFields[1];
       return Future.error(msg);
     } else {
       return repository
-          .signup(User(username, name, birth, password, confirmPassword));
+          .signup(User(username, email, birth, password, confirmPassword));
     }
   }
 }
