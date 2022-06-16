@@ -1,10 +1,11 @@
 class User {
-  const User(this.name, this.username, {this.token});
+  const User(this.email, {this.token});
 
-  final String name;
-  final String username;
+  // final String name;
+  // final String username;
+  final String email;
   final String? token;
 
   factory User.fromJson(Map<String, dynamic> json) =>
-      User(json['name'], json['username'], token: json['token']);
+      User(json['email'], token: json['token']);
 }
