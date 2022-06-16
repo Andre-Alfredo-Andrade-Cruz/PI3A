@@ -13,7 +13,7 @@ class SignupScreenRepository implements ISignup {
     );
     if (response.statusCode == 200) {
       final token = response.headers.value('Authorization');
-      final domain = User(user.username, user.birth, user.email, user.password,
+      final domain = User(user.username, user.email, user.birth, user.password,
           user.confirmPassword,
           token: token);
       return Future.value(domain);
