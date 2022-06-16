@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:localization/localization.dart';
 import 'package:pdm/src/Features/auth/data/repository/login_screen_repository.dart';
 import 'package:pdm/src/Features/auth/domain/usecase/login_screen_usecase.dart';
 import 'package:pdm/src/Features/auth/presentation/view/page/home_page.dart';
@@ -44,7 +45,7 @@ class LoginScreen extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Usuario:",
+                  'username'.i18n(),
                   style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
                 ),
               ],
@@ -73,7 +74,7 @@ class LoginScreen extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Senha:",
+                  'password'.i18n(),
                   style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
                 ),
               ],
@@ -102,7 +103,7 @@ class LoginScreen extends StatelessWidget {
                 Flexible(
                   child: SizedBox(
                       child: ElevatedButton(
-                          child: Text("Entrar",
+                          child: Text('login'.i18n(),
                               style: TextStyle(
                                   color: Color.fromARGB(255, 0, 0, 0))),
                           onPressed: () => {
@@ -114,8 +115,7 @@ class LoginScreen extends StatelessWidget {
                                     context: context,
                                     builder: (BuildContext context) {
                                       return AlertDialog(
-                                        title: const Text(
-                                            'Usuário logado com sucesso!', style: TextStyle(fontSize: 16)),
+                                        title: Text('username_true'.i18n(), style: TextStyle(fontSize: 16)),
                                         content: SingleChildScrollView(
                                           child: ListBody(
                                             children: <Widget>[
@@ -143,8 +143,7 @@ class LoginScreen extends StatelessWidget {
                                     context: context,
                                     builder: (BuildContext context) {
                                       return AlertDialog(
-                                        title:
-                                            const Text('Erro ao fazer o login', style: TextStyle(fontSize: 16)),
+                                        title: Text('username_false'.i18n(), style: TextStyle(fontSize: 16)),
                                         content: SingleChildScrollView(
                                           child: ListBody(
                                             children: <Widget>[
@@ -184,7 +183,7 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(
                     child: TextButton(
                       child: Text(
-                        "Esqueceu a senha?",
+                        'forgot_password'.i18n(),
                         style:
                             TextStyle(fontSize: 16, color: Color.fromRGBO(240, 176, 51, 1)),
                       ),
@@ -204,7 +203,7 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(
                     child: TextButton(
                       child: Text(
-                        "Faça o seu cadastro aqui.",
+                        'signup'.i18n(),
                         style:
                             TextStyle(fontSize: 16, color: Color.fromRGBO(240, 176, 51, 1)),
                       ),

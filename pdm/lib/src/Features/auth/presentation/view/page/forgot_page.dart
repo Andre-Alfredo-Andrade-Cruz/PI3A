@@ -1,21 +1,31 @@
-import 'dart:ui';
+//import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
+//import 'package:flutter/rendering.dart';
+//import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:localization/localization.dart';
 import 'package:pdm/src/Features/auth/domain/usecase/forgot_screen_usecase.dart';
 import 'login_page.dart';
-import 'signup_page.dart';
+//import 'signup_page.dart';
 
-class ForgotScreen extends StatelessWidget {
+class ForgotScreen extends StatefulWidget {
 
+
+  const ForgotScreen({Key? key}) : super(key: key);
+
+  @override
+  State<ForgotScreen> createState() => _ForgotScreenState();
+}
+
+class _ForgotScreenState extends State<ForgotScreen> {
   var emailTextFieldController = TextEditingController();
+
   var forgotUseCase = ForgotUseCase();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Pingu Idiomas',
+        title: 'app_name'.i18n(),
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
@@ -67,7 +77,7 @@ class ForgotScreen extends StatelessWidget {
                     Flexible(
                       child: SizedBox(
                           child: ElevatedButton(
-                              child: Text("Confirmar",
+                              child: Text('confirm'.i18n(),
                                   style: TextStyle(
                                       color:
                                           Color.fromARGB(255, 255, 255, 255))),
@@ -79,8 +89,7 @@ class ForgotScreen extends StatelessWidget {
                                         context: context,
                                         builder: (BuildContext context) {
                                           return AlertDialog(
-                                            title: const Text(
-                                                'A nova senha foi enviada para o seu email!', style: TextStyle(fontSize: 16)),
+                                            title: Text('new_Pass'.i18n(), style: TextStyle(fontSize: 16)),
                                             content: SingleChildScrollView(
                                               child: ListBody(
                                                 children: <Widget>[
@@ -108,8 +117,7 @@ class ForgotScreen extends StatelessWidget {
                                         context: context,
                                         builder: (BuildContext context) {
                                           return AlertDialog(
-                                            title: const Text(
-                                                'Erro ao resetar a senha.', style: TextStyle(fontSize: 16)),
+                                            title: Text('new_Pass_False'.i18n(), style: TextStyle(fontSize: 16)),
                                             content: SingleChildScrollView(
                                               child: ListBody(
                                                 children: <Widget>[

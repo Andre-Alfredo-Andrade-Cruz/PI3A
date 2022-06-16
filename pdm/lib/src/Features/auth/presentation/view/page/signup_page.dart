@@ -1,32 +1,48 @@
 // import 'dart:indexed_db';
-import 'dart:ui';
+//mport 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:pdm/src/Features/auth/domain/repository/signup_screen_interface.dart';
+//import 'package:flutter/rendering.dart';
+import 'package:localization/localization.dart';
+//import 'package:pdm/src/Features/auth/domain/repository/signup_screen_interface.dart';
 import 'package:pdm/src/Features/auth/domain/usecase/signup_screen_usecase.dart';
 
-import '../../../data/repository/signup_screen_repository.dart';
-import '../../../domain/model/signup.dart';
+//import '../../../data/repository/signup_screen_repository.dart';
+//import '../../../domain/model/signup.dart';
 import 'login_page.dart';
-import 'forgot_page.dart';
+//import 'forgot_page.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
+
+  const SignupScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
   late ColorScheme _colors;
+
   late ThemeData _theme;
 
   var usernameTextFieldController = TextEditingController();
+
   var nameTextFieldController = TextEditingController();
+
   var birthTextFieldController = TextEditingController();
+
   var emailTextFieldController = TextEditingController();
+
   var passwordTextFieldController = TextEditingController();
+
   var confirmPasswordTextFieldController = TextEditingController();
+
   var signupUseCase = SignupUseCase();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Pingu Idiomas',
+        title: 'app_name'.i18n(),
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
@@ -51,7 +67,7 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Usuario:",
+                      'User'.i18n(),
                       style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ],
@@ -79,7 +95,7 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Nome:",
+                      'name'.i18n(),
                       style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ],
@@ -107,7 +123,7 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Email:",
+                      "E-mail:",
                       style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ],
@@ -134,7 +150,7 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Data de nascimento:",
+                      'birth'.i18n(),
                       style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ],
@@ -191,7 +207,7 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Senha:",
+                      'password'.i18n(),
                       style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ],
@@ -219,7 +235,7 @@ class SignupScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Confirmar senha:",
+                      'confirm_password'.i18n(),
                       style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ],
@@ -249,7 +265,7 @@ class SignupScreen extends StatelessWidget {
                     Flexible(
                       child: SizedBox(
                           child: ElevatedButton(
-                              child: Text("Cadastrar",
+                              child: Text('register'.i18n(),
                                   style: TextStyle(
                                       color: Color.fromARGB(255, 255, 255, 255))),
                               onPressed: () => {
@@ -267,8 +283,7 @@ class SignupScreen extends StatelessWidget {
                                         context: context,
                                         builder: (BuildContext context) {
                                           return AlertDialog(
-                                            title: const Text(
-                                                'Usuário cadastrado com sucesso!', style: TextStyle(fontSize: 16)),
+                                            title: Text('register_True'.i18n(), style: TextStyle(fontSize: 16)),
                                             content: SingleChildScrollView(
                                               child: ListBody(
                                                 children: <Widget>[
@@ -296,8 +311,7 @@ class SignupScreen extends StatelessWidget {
                                         context: context,
                                         builder: (BuildContext context) {
                                           return AlertDialog(
-                                            title: const Text(
-                                                'Erro ao fazer o cadastro', style: TextStyle(fontSize: 16)),
+                                            title: Text('register_False'.i18n(), style: TextStyle(fontSize: 16)),
                                             content: SingleChildScrollView(
                                               child: ListBody(
                                                 children: <Widget>[

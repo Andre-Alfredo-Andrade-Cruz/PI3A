@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+//import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:localization/localization.dart';
 import 'package:pdm/src/google_maps.dart';
 import 'package:pdm/src/DialogFlow.dart';
 
@@ -9,7 +10,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
+      appBar: AppBar(title: Text('app_name'.i18n())),
       body: Container(
         padding: EdgeInsets.only(left: 40, right: 40),
         child: ListView(children: <Widget>[
@@ -18,7 +19,7 @@ class HomePage extends StatelessWidget {
             Flexible(
               child: SizedBox(
                   child: ElevatedButton(
-                      child: Text("Chat",
+                      child: Text("Chat Bot",
                           style:
                               TextStyle(color: Color.fromARGB(255, 255, 3, 3))),
                       onPressed: () => {
@@ -41,7 +42,7 @@ class HomePage extends StatelessWidget {
             Flexible(
               child: SizedBox(
                   child: ElevatedButton(
-                      child: Text("Mapa",
+                      child: Text('map'.i18n(),
                           style:
                               TextStyle(color: Color.fromARGB(255, 255, 3, 3))),
                       onPressed: () => {
@@ -64,7 +65,7 @@ class HomePage extends StatelessWidget {
             Flexible(
               child: SizedBox(
                   child: ElevatedButton(
-                      child: Text("Transformador Slang",
+                      child: Text('Slang'.i18n(),
                           style:
                               TextStyle(color: Color.fromARGB(255, 255, 3, 3))),
                       onPressed: () => {},

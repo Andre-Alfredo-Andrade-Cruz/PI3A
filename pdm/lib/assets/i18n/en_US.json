@@ -26,6 +26,10 @@
     "register": "Register",
     "register_True": "User successfully registered!",
     "register_False": "Error registering",
-    "date": "Today"
+    "date": "Today",
+    "hint_Mess": "Type here...",
+    "confirm": "Confirm",
+    "new_Pass": "The new password was sent to your e-mail!",
+    "new_Pass_False": "Password reset error."
     
 }

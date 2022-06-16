@@ -24,6 +24,10 @@
     "register": "Cadastrar",
     "register_True": "Usuário cadastrado com sucesso!",
     "register_False": "Erro ao fazer o cadastro",
-    "date": "Hoje"
+    "date": "Hoje",
+    "hint_Mess": "Insira a mensagem...",
+    "confirm": "Confirmar",
+    "new_Pass": "A nova senha foi enviada para o seu email!",
+    "new_Pass_False": "Erro ao resetar a senha."
     
 }
