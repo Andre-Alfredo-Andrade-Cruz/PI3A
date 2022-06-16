@@ -9,7 +9,7 @@ import 'package:pdm/src/Features/auth/domain/usecase/signup_screen_usecase.dart'
 //import '../../../data/repository/signup_screen_repository.dart';
 //import '../../../domain/model/signup.dart';
 import 'login_page.dart';
-import 'forgot_page.dart';
+//import 'forgot_page.dart';
 
 class SignupScreen extends StatefulWidget {
 
@@ -40,7 +40,7 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Pingu Idiomas',
+        title: 'app_name'.i18n(),
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
@@ -74,7 +74,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 Row(
                   children: [ 
                     Flexible(
-                        child: Container(
+                        child: SizedBox(
                       height: 40,
                       child: TextField(
                         controller: usernameTextFieldController,
@@ -126,7 +126,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 Row(
                   children: [
                     Text(
-                      "Email:",
+                      "E-mail:",
                       style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ],
@@ -157,7 +157,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 Row(
                   children: [
                     Text(
-                      "Data de nascimento:",
+                      'birth'.i18n(),
                       style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ],
@@ -166,7 +166,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 Row(
                   children: [
                     Flexible(
-                        child: Container(
+                        child: SizedBox(
                       height: 40,
                       child: TextField(
                           readOnly: true,
@@ -227,7 +227,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 Row(
                   children: [
                     Flexible(
-                        child: Container(
+                        child: SizedBox(
                       height: 40,
                       child: TextField(
                           obscureText: true,
@@ -259,7 +259,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 Row(
                   children: [
                     Flexible(
-                        child: Container(
+                        child: SizedBox(
                       height: 40,
                       child: TextField(
                           obscureText: true,

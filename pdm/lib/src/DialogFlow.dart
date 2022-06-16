@@ -4,6 +4,7 @@ import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
 import 'package:intl/intl.dart';
+import 'package:localization/localization.dart';
 
 class DialogFlow extends StatelessWidget{
   const DialogFlow({Key? key}) : super(key: key);
@@ -64,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           Container(
             padding: EdgeInsets.only(top: 15, bottom: 10),
-            child: Text("Hoje, ${DateFormat("Hm").format(DateTime.now())}", style: TextStyle(
+            child: Text("${'date'.i18n()}, ${DateFormat("Hm").format(DateTime.now())}", style: TextStyle(
               fontSize: 20
             ),),
           ),

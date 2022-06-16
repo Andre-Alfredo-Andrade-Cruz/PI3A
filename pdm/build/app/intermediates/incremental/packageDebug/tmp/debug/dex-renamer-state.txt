@@ -1,4 +1,4 @@
-#Wed Jun 15 19:09:50 GMT-03:00 2022
-base.0=C\:\\Users\\asusdesktop\\Documents\\pi3\\14_06_2022\\PI3A\\pdm\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Wed Jun 15 23:00:25 BRT 2022
+base.0=C\:\\Users\\andre\\Documents\\GitHub\\PI3A\\pdm\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

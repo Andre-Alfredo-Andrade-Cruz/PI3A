@@ -25,6 +25,7 @@
     "confirm_password": "Confirm password",
     "register": "Register",
     "register_True": "User successfully registered!",
-    "register_False": "Error registering"
+    "register_False": "Error registering",
+    "date": "Today"
     
 }

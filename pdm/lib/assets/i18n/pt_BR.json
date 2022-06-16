@@ -23,6 +23,7 @@
     "confirm_password": "Confirmar senha",
     "register": "Cadastrar",
     "register_True": "Usuário cadastrado com sucesso!",
-    "register_False": "Erro ao fazer o cadastro"
+    "register_False": "Erro ao fazer o cadastro",
+    "date": "Hoje"
     
 }
