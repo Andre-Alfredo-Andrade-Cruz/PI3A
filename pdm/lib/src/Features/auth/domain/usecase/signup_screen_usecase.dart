@@ -15,7 +15,15 @@ class SignupUseCase {
       // return 'name_required'.i18n();
       return [false, "O nome não pode estar em branco."];
     }
-    return [true];
+
+    RegExp validName =
+        RegExp(r"^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$");
+
+    if (validName.hasMatch(name)) {
+      return [true];
+    } else {
+      return [false, "Insira um nome válido."];
+    }
   }
 
   List validateBirth(String birth) {
@@ -31,13 +39,28 @@ class SignupUseCase {
       // return 'birth_required'.i18n();
       return [false, "O email não pode estar em branco."];
     }
-    return [true];
+
+    RegExp validEmail = RegExp(
+        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
+
+    if (validEmail.hasMatch(email)) {
+      return [true];
+    } else {
+      return [false, "Insira um email válido."];
+    }
   }
 
   List validateUsername(String username) {
     if (username.isEmpty) {
-      // return 'username_required'.i18n();
       return [false, "O nome de usuário não pode estar em branco."];
+    }
+
+    if (username.contains(' ')) {
+      return [false, "O nome de usuario não pode ter espaço."];
+    }
+
+    if (username.length < 5) {
+      return [false, "O nome de usuario tem que ter no mínimo 5 caracteres."];
     }
 
     return [true];
@@ -45,8 +68,37 @@ class SignupUseCase {
 
   List validatePassword(String password) {
     if (password.isEmpty) {
-      // return 'password_required'.i18n();
       return [false, "A senha não pode estar em branco."];
+    }
+
+    RegExp validPasswordUpperCase = RegExp(r"^(?=.*[A-Z])");
+
+    RegExp validPasswordLowerCase = RegExp(r"^(?=.*[a-z])");
+
+    RegExp validPasswordOneDigit = RegExp(r"^(?=.*?[0-9])");
+
+    RegExp validPasswordSpecialCharacter = RegExp(r"^(?=.*?[!@#\%$&*~])");
+
+    RegExp validPasswordMinLength = RegExp(r"^.{8,}");
+
+    if (!validPasswordUpperCase.hasMatch(password)) {
+      return [false, 'A senha precisa ter pelo menos uma letra maiúscula.'];
+    }
+
+    if (!validPasswordLowerCase.hasMatch(password)) {
+      return [false, 'A senha precisa ter pelo menos uma letra minúscula.'];
+    }
+
+    if (!validPasswordOneDigit.hasMatch(password)) {
+      return [false, 'A senha precisa ter pelo menos um número.'];
+    }
+
+    if (!validPasswordSpecialCharacter.hasMatch(password)) {
+      return [false, 'A senha precisa ter pelo menos um caracter especial.'];
+    }
+
+    if (!validPasswordMinLength.hasMatch(password)) {
+      return [false, 'A senha precisa ter no mínimo 8 caracteres.'];
     }
 
     return [true];
@@ -64,8 +116,8 @@ class SignupUseCase {
     return [true];
   }
 
-  List validateAllFields(String username, String name, String birth, String email, 
-      String password, String confirmPassword) {
+  List validateAllFields(String username, String name, String birth,
+      String email, String password, String confirmPassword) {
     if (!validateUsername(username)[0]) {
       return validateUsername(username);
     }
@@ -74,12 +126,12 @@ class SignupUseCase {
       return validateName(name);
     }
 
-    if (!validateBirth(birth)[0]) {
-      return validateBirth(birth);
-    }
-
     if (!validateEmail(email)[0]) {
       return validateEmail(email);
+    }
+
+    if (!validateBirth(birth)[0]) {
+      return validateBirth(birth);
     }
 
     if (!validatePassword(password)[0]) {
@@ -95,8 +147,8 @@ class SignupUseCase {
 
   Future<User> signup(String username, String name, String birth, String email,
       String password, String confirmPassword) {
-    var respValidateAllFields =
-        validateAllFields(username, name, birth, email, password, confirmPassword);
+    var respValidateAllFields = validateAllFields(
+        username, name, birth, email, password, confirmPassword);
     if (!respValidateAllFields[0]) {
       final msg = respValidateAllFields[1];
       return Future.error(msg);

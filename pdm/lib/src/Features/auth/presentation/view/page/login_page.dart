@@ -57,7 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Text(
                   'username'.i18n(),
-                  style: TextStyle(color: Color.fromARGB(255, 255, 26, 1)),
+                  style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                 ),
               ],
             ),
@@ -68,9 +68,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: TextField(
                       controller: loginTextFieldController,
                       decoration: InputDecoration(
+                        contentPadding: EdgeInsets.only(left: 15.0),
                         border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0),
                             borderSide: BorderSide(
-                                color: Color.fromARGB(255, 246, 0, 4),
+                                color: Color.fromARGB(255, 0, 0, 0),
                                 width: 2.0)),
                         // hintText: 'Digite seu email',
                       )),
@@ -83,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Text(
                   'password'.i18n(),
-                  style: TextStyle(color: Color.fromARGB(255, 255, 26, 1)),
+                  style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
                 ),
               ],
             ),
@@ -92,9 +94,13 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Flexible(
                   child: TextField(
+                      obscureText: true,
                       controller: passwordTextFieldController,
                       decoration: InputDecoration(
-                        border: OutlineInputBorder(),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        contentPadding: EdgeInsets.only(left: 15.0),
                         // hintText: 'Digite sua senha',
                       )),
                 ),
@@ -109,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: ElevatedButton(
                           child: Text('login'.i18n(),
                               style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 3, 3))),
+                                  color: Color.fromARGB(255, 0, 0, 0))),
                           onPressed: () => {
                                 loginUseCase
                                     .login(loginTextFieldController.text,
@@ -190,7 +196,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Text(
                         'forgot_password'.i18n(),
                         style:
-                            TextStyle(color: Color.fromARGB(255, 255, 220, 23)),
+                            TextStyle(color: Color.fromARGB(255, 154, 131, 1)),
                       ),
                       onPressed: () => {
                         Navigator.of(context).push(MaterialPageRoute(
@@ -210,7 +216,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Text(
                         'signup'.i18n(),
                         style:
-                            TextStyle(color: Color.fromARGB(255, 255, 220, 23)),
+                            TextStyle(color: Color.fromARGB(255, 154, 131, 1)),
                       ),
                       onPressed: () => {
                         Navigator.of(context).push(MaterialPageRoute(
@@ -229,6 +235,3 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
-// class _LoginScreenState extends ModularState<LoginScreen, LoginScreenViewModular>{
-
-// }

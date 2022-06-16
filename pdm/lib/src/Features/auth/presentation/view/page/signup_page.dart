@@ -9,15 +9,7 @@ import 'package:pdm/src/Features/auth/domain/usecase/signup_screen_usecase.dart'
 //import '../../../data/repository/signup_screen_repository.dart';
 //import '../../../domain/model/signup.dart';
 import 'login_page.dart';
-//import 'forgot_page.dart';
-// import './../../viewmodel/signup_screen_viewmodel.dart';
-
-// class SignupScreen extends StatelessWidget{
-//   const SignupScreen({Key? key}) : super(key: key);
-
-//   @override
-//   State<SignupScreen> createState() => _SignupScreenState();
-// }
+import 'forgot_page.dart';
 
 class SignupScreen extends StatefulWidget {
 
@@ -74,24 +66,30 @@ class _SignupScreenState extends State<SignupScreen> {
                   children: [
                     Text(
                       'User'.i18n(),
-                      style: TextStyle(fontSize: 20, color: Colors.red),
+                      style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ],
                 ),
                 Padding(padding: EdgeInsets.only(bottom: 10)),
                 Row(
-                  children: [
+                  children: [ 
                     Flexible(
-                        child: TextField(
-                          controller: usernameTextFieldController,
-                          textAlignVertical: TextAlignVertical.center,
-                          // style: TextStyle(fontSize: 20),
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            // hintText: 'Digite seu nome',
-                            // isCollapsed: true,
+                        child: Container(
+                      height: 40,
+                      child: TextField(
+                        controller: usernameTextFieldController,
+                        textAlignVertical: TextAlignVertical.center,
+                        // style: TextStyle(fontSize: 20),
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0),
                           ),
-                        )),
+                          contentPadding: EdgeInsets.only(left: 15.0),
+                          // hintText: 'Digite seu nome',
+                          // isCollapsed: true,
+                        ),
+                      ),
+                    )),
                   ],
                   mainAxisAlignment: MainAxisAlignment.center,
                 ),
@@ -100,7 +98,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   children: [
                     Text(
                       'Name'.i18n(),
-                      style: TextStyle(fontSize: 20, color: Colors.red),
+                      style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ],
                 ),
@@ -113,7 +111,10 @@ class _SignupScreenState extends State<SignupScreen> {
                         textAlignVertical: TextAlignVertical.center,
                         // style: TextStyle(fontSize: 20),
                         decoration: InputDecoration(
-                          border: OutlineInputBorder(),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          contentPadding: EdgeInsets.only(left: 15.0),
                           // hintText: 'Digite seu nome',
                           // isCollapsed: true,
                         ),
@@ -125,36 +126,8 @@ class _SignupScreenState extends State<SignupScreen> {
                 Row(
                   children: [
                     Text(
-                      "E-mail:",
-                      style: TextStyle(fontSize: 20, color: Colors.red),
-                    ),
-                  ],
-                ),
-                Padding(padding: EdgeInsets.only(bottom: 10)),
-                Row(
-                  children: [
-                    Flexible(
-                        child: SizedBox(
-                          height: 40,
-                          child: TextField(
-                          controller: birthTextFieldController,
-                          textAlignVertical: TextAlignVertical.center,
-                          style: TextStyle(fontSize: 20),
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            // hintText: 'Digite seu nome',
-                            // isCollapsed: true,
-                          )),
-                    )),
-                  ],
-                  mainAxisAlignment: MainAxisAlignment.center,
-                ),
-                Padding(padding: EdgeInsets.only(bottom: 10)),
-                Row(
-                  children: [
-                    Text(
-                      'birth'.i18n(),
-                      style: TextStyle(fontSize: 20, color: Colors.red),
+                      "Email:",
+                      style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ],
                 ),
@@ -169,7 +142,71 @@ class _SignupScreenState extends State<SignupScreen> {
                           textAlignVertical: TextAlignVertical.center,
                           style: TextStyle(fontSize: 20),
                           decoration: InputDecoration(
-                            border: OutlineInputBorder(),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            contentPadding: EdgeInsets.only(left: 15.0),
+                            // hintText: 'Digite seu nome',
+                            // isCollapsed: true,
+                          )),
+                    )),
+                  ],
+                  mainAxisAlignment: MainAxisAlignment.center,
+                ),
+                Padding(padding: EdgeInsets.only(bottom: 10)),
+                Row(
+                  children: [
+                    Text(
+                      "Data de nascimento:",
+                      style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
+                    ),
+                  ],
+                ),
+                Padding(padding: EdgeInsets.only(bottom: 10)),
+                Row(
+                  children: [
+                    Flexible(
+                        child: Container(
+                      height: 40,
+                      child: TextField(
+                          readOnly: true,
+                          onTap: () {
+                            showDatePicker(
+                                context: context,
+                                initialDate: DateTime.now(),
+                                firstDate: DateTime(1990, 1),
+                                lastDate: DateTime.now(),
+                                builder: (context, picker) {
+                                  return Theme(
+                                    data: ThemeData.dark().copyWith(
+                                      colorScheme: ColorScheme.dark(
+                                        primary: Colors.deepPurple,
+                                        onPrimary: Colors.white,
+                                        surface:
+                                            Color.fromARGB(255, 151, 205, 255),
+                                        onSurface:
+                                            Color.fromARGB(255, 16, 7, 68),
+                                      ),
+                                      dialogBackgroundColor:
+                                          Color.fromARGB(255, 87, 215, 244),
+                                    ),
+                                    child: picker!,
+                                  );
+                                }).then((selectedDate) {
+                              if (selectedDate != null) {
+                                birthTextFieldController.text =
+                                    selectedDate.toString().split(' ')[0];
+                              }
+                            });
+                          },
+                          controller: birthTextFieldController,
+                          textAlignVertical: TextAlignVertical.center,
+                          style: TextStyle(fontSize: 20),
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            contentPadding: EdgeInsets.only(left: 15.0),
                             // hintText: 'Digite seu nome',
                             // isCollapsed: true,
                           )),
@@ -182,7 +219,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   children: [
                     Text(
                       'password'.i18n(),
-                      style: TextStyle(fontSize: 20, color: Colors.red),
+                      style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ],
                 ),
@@ -190,14 +227,18 @@ class _SignupScreenState extends State<SignupScreen> {
                 Row(
                   children: [
                     Flexible(
-                        child: SizedBox(
-                          height: 40,
-                          child: TextField(
+                        child: Container(
+                      height: 40,
+                      child: TextField(
+                          obscureText: true,
                           controller: passwordTextFieldController,
                           textAlignVertical: TextAlignVertical.center,
                           style: TextStyle(fontSize: 20),
                           decoration: InputDecoration(
-                            border: OutlineInputBorder(),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            contentPadding: EdgeInsets.only(left: 15.0),
                             // hintText: 'Digite seu nome',
                             // isCollapsed: true,
                           )),
@@ -210,7 +251,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   children: [
                     Text(
                       'confirm_password'.i18n(),
-                      style: TextStyle(fontSize: 20, color: Colors.red),
+                      style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ],
                 ),
@@ -218,14 +259,18 @@ class _SignupScreenState extends State<SignupScreen> {
                 Row(
                   children: [
                     Flexible(
-                        child: SizedBox(
-                          height: 40,
-                          child: TextField(
+                        child: Container(
+                      height: 40,
+                      child: TextField(
+                          obscureText: true,
                           controller: confirmPasswordTextFieldController,
                           textAlignVertical: TextAlignVertical.center,
                           style: TextStyle(fontSize: 20),
                           decoration: InputDecoration(
-                            border: OutlineInputBorder(),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            contentPadding: EdgeInsets.only(left: 15.0),
                             // hintText: 'Digite seu nome',
                             // isCollapsed: true,
                           )),
@@ -241,7 +286,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           child: ElevatedButton(
                               child: Text('register'.i18n(),
                                   style: TextStyle(
-                                      color: Color.fromARGB(255, 255, 3, 3))),
+                                      color: Color.fromARGB(255, 255, 255, 255))),
                               onPressed: () => {
                                     signupUseCase
                                         .signup(
@@ -314,9 +359,9 @@ class _SignupScreenState extends State<SignupScreen> {
                               style: ElevatedButton.styleFrom(
                                 side: BorderSide(
                                   width: 2.0,
-                                  color: Color.fromARGB(255, 0, 0, 0),
+                                  color: Color.fromARGB(255, 80, 229, 255),
                                 ),
-                                primary: Color.fromARGB(255, 255, 255, 255),
+                                primary: Color.fromARGB(255, 80, 229, 255),
                               )),
                           width: double.infinity,
                           height: 40),
