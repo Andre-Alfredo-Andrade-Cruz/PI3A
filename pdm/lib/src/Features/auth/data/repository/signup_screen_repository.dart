@@ -18,7 +18,7 @@ class SignupScreenRepository implements ISignup {
           token: token);
       return Future.value(domain);
     } else {
-      throw Exception("Não foi possível cadastrar usuário!");
+      throw Exception(response.headers['Message']);
     }
   }
 }
