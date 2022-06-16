@@ -7,7 +7,6 @@ class ForgotScreenRepository implements IForgot {
   @override
   Future<User> forgot(User user) async {
     final dto = UserDto.fromDomain(user);
-    print(dto.toJson());
     final response = await Dio().post(
       'http://10.0.2.2:3000/forgot',
       queryParameters: dto.toJson(),

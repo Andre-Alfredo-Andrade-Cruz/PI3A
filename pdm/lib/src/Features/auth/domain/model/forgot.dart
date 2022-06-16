@@ -1,8 +1,6 @@
 class User {
   const User(this.email, {this.token});
-
-  // final String name;
-  // final String username;
+  
   final String email;
   final String? token;
 

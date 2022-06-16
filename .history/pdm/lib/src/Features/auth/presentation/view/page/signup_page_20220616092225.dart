@@ -306,7 +306,6 @@ class SignupScreen extends StatelessWidget {
                                         },
                                       );
                                     }).catchError((error) {
-                                      print("error: $error");
                                       showDialog(
                                         context: context,
                                         builder: (BuildContext context) {

@@ -6,7 +6,6 @@ import '../model/user.dart';
 import '../repository/login_screen_interface.dart';
 
 class LoginUseCase {
-  // final repository = Modular.get<ILogin>();
   final repository = LoginScreenRepository();
 
   List validateUsername(String username) {
