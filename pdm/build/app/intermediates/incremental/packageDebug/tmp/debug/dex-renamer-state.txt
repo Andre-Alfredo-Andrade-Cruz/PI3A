@@ -1,0 +1,4 @@
+#Thu Jun 16 19:32:25 BRT 2022
+base.0=C\:\\Users\\andre\\Documents\\GitHub\\PI3A\\pdm\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

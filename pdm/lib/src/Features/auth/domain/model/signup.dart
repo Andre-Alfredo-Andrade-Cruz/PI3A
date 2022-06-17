@@ -1,13 +1,16 @@
 class User {
-  const User(this.name, this.birth, this.username, this.password, this.confirm_password, {this.token});
+  const User(this.username, this.email, this.birth, this.password,
+      this.confirmPassword,
+      {this.token});
 
-  final String name;
-  final String birth;
   final String username;
+  final String email;
   final String password;
-  final String confirm_password;
   final String? token;
+  final String birth;
+  final String confirmPassword;
 
-  factory User.fromJson(Map<String, dynamic> json) =>
-      User(json['name'], json['birth'], json['username'], json['password'], json['confirm_password'], token: json['token']);
+  factory User.fromJson(Map<String, dynamic> json) => User(json['username'],
+      json['email'], json['birth'], json['password'], json['confirmPassword'],
+      token: json['token']);
 }

@@ -1,9 +1,9 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:pdm/src/Features/auth/presentation/view/page/forgot_screen.dart';
-import 'package:pdm/src/Features/auth/presentation/view/page/signup_screen.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:pdm/src/Features/auth/presentation/view/page/forgot_page.dart';
+import 'package:pdm/src/Features/auth/presentation/view/page/signup_page.dart';
 
 extension CoreFormTextField on Widget {
   Widget createFormField({
@@ -78,20 +78,5 @@ extension CoreFormTextField on Widget {
         ],
       ),
     );
-
-    return ContainerText(
-      child: TextButton(
-        child: Text(
-          textAlignVertical: TextAlignVertical.center,
-          obscureText: obscureText,
-          validator: validator,
-          onChanged: onChange,
-          onEditingComplete: onEditingComplete,
-          onFieldSubmitted: onFieldSubmitted,
-          onSaved: onSaved,
-        )
-      ),
-    );
-    
   }
 }

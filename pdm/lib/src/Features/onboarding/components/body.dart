@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:localization/localization.dart';
-import 'package:pdm/src/Features/auth/presentation/view/page/login_screen.dart';
+import 'package:pdm/src/Features/auth/presentation/view/page/home_page.dart';
+//import 'package:pdm/src/Features/auth/presentation/view/page/login_page.dart';
 import 'package:pdm/src/Features/onboarding/components/default_button.dart.dart';
-import 'package:pdm/src/Features/onboarding/components/size_config.dart';
+//import 'package:pdm/src/Features/onboarding/components/size_config.dart';
 import 'package:pdm/src/Features/onboarding/components/splash_content.dart';
-import 'package:pdm/src/Features/onboarding/presentation/view/page/splash_screen.dart';
+//import 'package:pdm/src/Features/onboarding/presentation/view/page/splash_screen.dart';
 
 class Body extends StatefulWidget {
+  const Body({Key? key}) : super(key: key);
+
   @override
   _BodyState createState() => _BodyState();
 }
@@ -15,21 +18,18 @@ class _BodyState extends State<Body> {
   int currentPage = 0;
   List<Map<String, String>> splashData = [
     {
-      "text": "Aprenda de onde quiser",
-      "text2":
-          "Aprenda gírias e palavras específicas de cada região do Brasil quando e onde quiser, tendo acesso sempre que necessário por meio do chat.",
+      "text": ('text1.1'.i18n()),
+      "text2":('text2.1'.i18n()),
       "image": "lib/assets/images/onboard1.png"
     },
     {
       "text": "Chatbot",
-      "text2":
-          "O chatbot realiza a tradução das palavras informadas a partir de redes sociais, ajuda na compreensão de forma confortavél para o usuário.",
+      "text2": ('text2.2'.i18n()),
       "image": "lib/assets/images/onboard2.png"
     },
     {
-      "text": "Aprenda variedades linguísticas de forma divertida",
-      "text2":
-          "Aprendendo a variação da língua portuguesa e tendo total entendimento, acaba incentivando o aluno a usar o aplicativa cada vez mais.",
+      "text": ('text1.3'.i18n()),
+      "text2": ('text2.3'.i18n()),
       "image": "lib/assets/images/onboard3.png"
     }
   ];
@@ -63,10 +63,10 @@ class _BodyState extends State<Body> {
                 Spacer(),
                 if (currentPage == 2)
                   DefaultButton(
-                    text: "Começar",
+                    text: 'onboars_button'.i18n(),
                     press: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => LoginScreen()));
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => HomePage()));
                     },
                   ),
                 Spacer(),

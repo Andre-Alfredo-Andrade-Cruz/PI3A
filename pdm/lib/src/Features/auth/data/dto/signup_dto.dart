@@ -1,20 +1,33 @@
-import 'package:basearch/src/features/auth/domain/model/user.dart';
+import 'package:pdm/src/Features/auth/domain/model/signup.dart';
 
 class UserDto {
-  const UserDto(this.name, this.birth, this.username, this.password, this.confirm_password);
+  const UserDto(this.username, this.email, this.birth, this.password,
+      this.confirmPassword, this.token);
 
-  final String name;
-  final String birth;
   final String username;
+  final String email;
+  final String birth;
   final String password;
-  final String confirm_password;
+  final String confirmPassword;
+  final String? token;
 
   factory UserDto.fromDomain(User user) {
-    return UserDto(user.name, user.birth, user.username, user.password, user.confirm_password);
+    return UserDto(user.username, user.email, user.birth, user.password,
+        user.confirmPassword, user.token);
   }
 
-  factory UserDto.fromJson(Map<String, dynamic> json) =>
-      UserDto(json['name'], json['birth'], json['username'], json['password'], json['confirm_password']);
+  factory UserDto.fromJson(Map<String, dynamic> json) => UserDto(
+      json['username'],
+      json['email'],
+      json['birth'],
+      json['password'],
+      json['confirmPassword'],
+      json['token']);
 
-  Map<String, dynamic> toJson() => {'name': name, 'birth': birth, 'username': username, 'password': password, 'confirm_password': confirm_password};
+  Map<String, dynamic> toJson() => {
+        'username': username,
+        'password': password,
+        'email': email,
+        'token': token
+      };
 }

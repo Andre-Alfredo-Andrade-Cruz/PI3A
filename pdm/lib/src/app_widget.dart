@@ -30,7 +30,6 @@ class AppWidget extends StatelessWidget {
   }
 }
 
-// Configure App Scroll with mouse and touch (Mobile and Desktop)
 class AppScrollBehavior extends MaterialScrollBehavior {
   @override
   Set<PointerDeviceKind> get dragDevices => {
